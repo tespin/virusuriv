@@ -1,19 +1,16 @@
-import Image from "next/image";
-import Video from "next-video";
-import clip1 from "/videos/01.mp4";
-import clip2 from "/videos/02.mp4";
-import clip3 from "/videos/03.mp4";
-import clip4 from "/videos/04.mp4";
+"use client";
+import React, { useState, useEffect } from "react";
+import FlexContainer from "./components/FlexContainer";
+import Clip from "./components/Clip";
 
 export default function Home() {
+  const id = "kkVTaW02lY1t01zMdSO7fWf9bNPr89OpQd8JPzPvo00hok";
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        {/* <Video src={clip1} />
-        <Video src={clip2} /> */}
-        <Video src={clip3} />
-        <Video src={clip4} />
-      </div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-black">
+      <FlexContainer className="">
+        <Clip playbackId={id} />
+      </FlexContainer>
     </main>
   );
 }
